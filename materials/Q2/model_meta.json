@@ -1,0 +1,46 @@
+{
+  "model": "LightGBM binary classifier (预训练，随题提供)",
+  "target": "高意向_未来30天",
+  "trained_on": "客户意向数据_CRM.xlsx / 历史数据_模型训练用（去重后 2400 行）",
+  "cutoff_date": "2026-09-30",
+  "n_features": 9,
+  "rounds": 79,
+  "params": {
+    "objective": "binary",
+    "metric": [
+      "auc",
+      "average_precision"
+    ],
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_child_samples": 30,
+    "feature_fraction": 0.85,
+    "bagging_fraction": 0.85,
+    "bagging_freq": 1,
+    "lambda_l2": 1.0,
+    "random_state": 42,
+    "n_jobs": -1,
+    "verbose": -1
+  },
+  "cv_auc_mean": 0.8662,
+  "cv_auc_std": 0.0173,
+  "holdout_within_train": {
+    "AUC": 0.8593,
+    "PR_AUC": 0.5639,
+    "KS": 0.5899,
+    "召回@Top20%": 0.625
+  },
+  "validation_sheet": {
+    "样本数": 800,
+    "正样本数": 120,
+    "AUC": 0.8463,
+    "PR_AUC": 0.5488,
+    "KS": 0.5412,
+    "Top20%": {
+      "k": 160,
+      "命中": 78,
+      "召回率": 0.65,
+      "提升度": 3.25
+    }
+  }
+}
